@@ -1,4 +1,3 @@
-package v3;
 
 
 public class Mine2 {
