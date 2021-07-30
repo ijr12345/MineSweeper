@@ -4,29 +4,46 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.plaf.FontUIResource;
+
 
 class newGame implements ActionListener {
-    int row_count = 30;
-    int col_count = 16;
-    int total_mine_count = 99;
-    
+    int row_count ;
+    int col_count;
+    int total_mine_count ;
+
     JFrame frame;
+    JPanel mainPanel = new JPanel();
+    JButton[] addButtons;
+    Cell[][] cells;
+    Logic2 game;
+
+    newGame(int rows, int cols, int mines){
+        this.row_count = rows;
+        this.col_count = cols;
+        this.total_mine_count = mines;
+
+        this.addButtons = new JButton[rows*cols];
+        this.cells = new Cell[rows][cols];
+        this.game = new Logic2(cols, rows, mines);
+    
+        uiSetup();
+ 
+    }
+    
+    /*JFrame frame;
     JPanel mainPanel = new JPanel();
     JButton[] addButtons = new JButton[row_count*col_count];
     Cell[][] cells = new Cell[row_count][col_count];
     Logic2 game = new Logic2(col_count, row_count, total_mine_count);
+    */
 
     int currentMineCount = 0;
 
     boolean firstTurn = true;
 
 
-    newGame(){
     
-        uiSetup();
- 
-    }
-
     //sets basic gui 
     public void uiSetup() {
         UI ui = new UI();
@@ -45,6 +62,15 @@ class newGame implements ActionListener {
         JButton restart = ui.addRestartButton();
         restart.addActionListener(this);
 
+        JButton easy = ui.addEasyButton();
+        easy.addActionListener(this);
+
+        JButton med = ui.addMediumButton();
+        med.addActionListener(this);
+
+        JButton hard = ui.addHardButton();
+        hard.addActionListener(this);
+
         //add game play buttons
         JPanel gameButtons = addButtonGrid();
         gameButtons.setPreferredSize(new Dimension(800, 800));
@@ -52,7 +78,7 @@ class newGame implements ActionListener {
         //menu panel layout
         JPanel menuPanel = new JPanel();
         frame.add(menuPanel);
-        menuPanel = ui.setMenuLayout(menuPanel, restart, flagCheck);
+        menuPanel = ui.setMenuLayout(menuPanel, restart, flagCheck, easy, med, hard);
 
         //game play layout
         JPanel gamePlayPanel = new JPanel();
@@ -123,10 +149,24 @@ class newGame implements ActionListener {
             }
         }
         else if ("restart".equals(e.getActionCommand())) {
-            new newGame();
+            //new newGame();
+            frame.setVisible(false);
         }
 
-        ///BUTTONS
+        else if ("easy".equals(e.getActionCommand())) {
+            new newGame(9, 9, 10);
+            frame.setVisible(false);
+        }
+        else if ("medium".equals(e.getActionCommand())) {
+            new newGame(16, 16, 40);
+            frame.setVisible(false);
+        }
+        else if ("hard".equals(e.getActionCommand())) {
+            new newGame(30, 16, 99);
+            frame.setVisible(false);
+        }
+
+        ///GAME PLAY BUTTONS
         else {
 
             Cell btn = (Cell) e.getSource();
@@ -272,6 +312,8 @@ class newGame implements ActionListener {
     public void winGame() {
         JPanel test = new JPanel();
         JLabel winMessage = new JLabel("You win!");
+        winMessage.setFont(new FontUIResource("Verdana", Font.BOLD, 30));
+
         test.add(winMessage);
         frame.add(test);
         //cells[0][0].setText("yo");
@@ -283,7 +325,7 @@ class newGame implements ActionListener {
 public class MineSweeper2 {
     public static void main(String[] args)
     {
-        new newGame();
+        new newGame(30, 16, 99);
     }
 }
 

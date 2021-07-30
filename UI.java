@@ -49,13 +49,41 @@ public class UI {
         return b;
 
     }
+
+    
+    public JButton addEasyButton() {
+        JButton b = new JButton("Easy");
+        b.setActionCommand("easy");
+
+        return b;
+    }
+
+    public JButton addMediumButton() {
+        JButton b = new JButton("Medium");
+        b.setActionCommand("medium");
+
+        return b;
+    }
+
+    public JButton addHardButton() {
+        JButton b = new JButton("Hard");
+        b.setActionCommand("hard");
+
+        return b;
+    }
     
 
-    public JPanel setMenuLayout(JPanel panel, JButton reset, JCheckBox flagging) {
+    public JPanel setMenuLayout(JPanel panel, JButton reset, JCheckBox flagging, JButton easy, JButton med, JButton hard) {
         panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 
-        panel.add(reset);
-        panel.add(Box.createRigidArea(new Dimension(0,20)));
+        //panel.add(reset);
+        //panel.add(Box.createRigidArea(new Dimension(0,20)));
+        panel.add(easy);
+        panel.add(Box.createRigidArea(new Dimension(0,5)));
+        panel.add(med);
+        panel.add(Box.createRigidArea(new Dimension(0,5)));
+        panel.add(hard);
+        panel.add(Box.createRigidArea(new Dimension(0,5)));
         panel.add(flagging);
 
         return panel;
