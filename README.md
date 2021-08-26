@@ -10,19 +10,22 @@ A Minesweeper clone using java (AWS and SWING)
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/64290148/130883009-56725930-26b2-4404-84d7-5e468f908447.png)
+![image](https://user-images.githubusercontent.com/64290148/130883273-80d356d6-30e0-44ed-bbf6-7095839a9105.png)
 
 The checked 'flag' check box allows user to mark potential bombs with an 'X'.
 
 
-![image](https://user-images.githubusercontent.com/64290148/130882770-7b3dc883-4b3d-413f-b901-14c72cff9f5c.png)
+![image](https://user-images.githubusercontent.com/64290148/130883283-6164e9c4-7188-4937-b241-b469fad99c57.png)
 
 Bombs are revealed and marked in red when a player loses the game.
 
 
-![image](https://user-images.githubusercontent.com/64290148/130883017-0a7396ce-515d-4654-ab06-10be697c1b3e.png)
+![image](https://user-images.githubusercontent.com/64290148/130883296-ad9acf94-8265-417c-bbcb-edb0b7a4ad3e.png)
 
 Flagging 'X' markers are replaced by red marked bombs when a player wins the game.
+
+
+
 
 
 
