@@ -10,5 +10,14 @@ This game has the following features:
 
 Screenshots
 
+The checked 'flag' check box allows user to mark potential bombs with an 'X'.
+
+![image](https://user-images.githubusercontent.com/64290148/130882770-7b3dc883-4b3d-413f-b901-14c72cff9f5c.png)
+
+Bombs are revealed and marked in red when a player loses the game.
+
+Flagging 'X' markers are replaced by red marked bombs when a player wins the game.
+
+
 
 
