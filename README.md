@@ -1,5 +1,5 @@
 # MineSweeper
-A Minesweeper clone built with java (AWS and SWING)
+A Minesweeper clone built with java (AWT and SWING)
 
 ## Features:
 1.	When the ‘flag’ checkbox is marked, an ‘X’ is displayed over the potential bomb square.
